@@ -1,0 +1,39 @@
+body {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+}
+
+::selection {
+    background: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Firefox */
+::-moz-selection {
+    background: black;
+    color: white;
+}
+
+/* Quitar box-shadow de Bootstrap */
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+    box-shadow: none;
+}
