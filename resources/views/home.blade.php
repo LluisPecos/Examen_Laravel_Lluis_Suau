@@ -4,7 +4,6 @@
 
 <!-- head -->
 <title>Inicio</title>
-<link href="{{ URL::asset('css/inicio.css') }}" rel="stylesheet" type="text/css">
 
 @endsection
 

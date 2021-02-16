@@ -14,5 +14,9 @@ use App\Http\Controllers\WebController;
 |
 */
 
+// WebController
 Route::get("/", [WebController::class, "home"]);
 Route::get("/home", [WebController::class, "home"]);
+Route::get("/migraciones", [WebController::class, "migraciones"]);
+Route::get("/seeders", [WebController::class, "seeders"]);
+Route::get("/email", [WebController::class, "email"]);
