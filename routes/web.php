@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\EmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,6 @@ Route::get("/home", [WebController::class, "home"]);
 Route::get("/migraciones", [WebController::class, "migraciones"]);
 Route::get("/seeders", [WebController::class, "seeders"]);
 Route::get("/email", [WebController::class, "email"]);
+
+// EmailController
+Route::get("/enviar-email", [EmailController::class, "enviar_email"]);

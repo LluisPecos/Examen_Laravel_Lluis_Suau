@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\View\Middleware\ShareErrorsFromSession
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +51,20 @@ use Illuminate\Support\Facades\Redirect;
 
                 @endif
             @endif
+            
+            @if($errors->any())
+            
+            <div class="alert alert-danger mb-4" role="alert" style="cursor: pointer">
+                <strong>VALIDATION ERROR:</strong>
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            
+            @endif
+            
             @yield('content')
         </main>
         

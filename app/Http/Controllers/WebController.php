@@ -21,7 +21,6 @@ class WebController extends Controller
     }
     
     function email() {
-        session()->flash('mensajeExito', 'Email enviado correctamente');
-        return redirect()->back();
+        return view("email");
     }
 }
