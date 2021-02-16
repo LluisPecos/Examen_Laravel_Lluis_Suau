@@ -41,6 +41,15 @@ use Illuminate\Support\Facades\Redirect;
         </header>
         
         <main class="container py-5">
+            @if(session()->has('mensajeExito'))
+                @if($mensaje = session()->get('mensajeExito'))
+
+                <div class="alert alert-success mb-4" role="alert" style="cursor: pointer">
+                    <strong>Bien hecho!</strong> {{ $mensaje }}
+                </div>
+
+                @endif
+            @endif
             @yield('content')
         </main>
         
@@ -55,4 +64,17 @@ use Illuminate\Support\Facades\Redirect;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        window.onload = function() {
+            
+            let alertas = document.getElementsByClassName("alert");
+            
+            for(let i = 0; i < alertas.length; i++) {
+                alertas[i].addEventListener("click", function() {
+                    this.remove();
+                });
+            }
+        }
+    </script>
 </html>
